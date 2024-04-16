@@ -1,35 +1,30 @@
 import React from "react"
-import FontAwesome from "@expo/vector-icons/FontAwesome"
 import { Tabs } from "expo-router"
-
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"]
-  color: string
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />
-}
+import { Icon } from "@/components/icon"
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#262626",
-        headerShown: false
+        headerShown: false,
+        tabBarStyle: {
+          gap: 4
+        }
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "Equivalente",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />
+          tabBarIcon: ({ color }) => <Icon name="scale" color={color} />
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
           title: "Buscar",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />
+          tabBarIcon: ({ color }) => <Icon name="search" color={color} />
         }}
       />
     </Tabs>
