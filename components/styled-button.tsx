@@ -17,17 +17,15 @@ export function StyledButton({
 }: StyledButtonProps) {
   return (
     <TouchableOpacity
-      style={{
-        ...buttonStyles.default,
-        ...buttonStyles[variant],
-        flex: flex1 ? 1 : 0
-      }}
+      style={[
+        buttonStyles.default,
+        buttonStyles[variant],
+        { flex: flex1 ? 1 : 0 }
+      ]}
       {...props}
       activeOpacity={0.7}
     >
-      <Text style={{ ...titleStyles.default, ...titleStyles[variant] }}>
-        {title}
-      </Text>
+      <Text style={[titleStyles.default, titleStyles[variant]]}>{title}</Text>
     </TouchableOpacity>
   )
 }
