@@ -12,7 +12,7 @@ export function Card({ children, title, group, kcal }: CardProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <View>{children}</View>
+      <View style={{ gap: 16 }}>{children}</View>
       <View style={styles.footer}>
         <View>
           <Text style={styles.footerTitle}>Grupo Alimentar:</Text>
