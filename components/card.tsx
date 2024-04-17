@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: "Inter-Bold",
-    fontSize: 20
+    fontSize: 16
   },
   footer: {
     flexDirection: "row",
