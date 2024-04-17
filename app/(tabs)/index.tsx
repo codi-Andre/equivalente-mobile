@@ -1,11 +1,17 @@
-import { StyleSheet, Text, View } from "react-native"
+import { StyledButton } from "@/components/styled-button"
+import { ScrollView, StyleSheet, Text, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} />
-    </View>
+    <SafeAreaView style={{ height: "100%" }}>
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View style={styles.container}>
+          <Text>Hello World</Text>
+          <StyledButton title="Button" variant="outline" />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   )
 }
 

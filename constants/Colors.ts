@@ -10,4 +10,4 @@ export default {
   neutral800: "#262626",
   neutral900: "#171717",
   neutral950: "#0a0a0a"
-}
+} as const
