@@ -1,45 +1,49 @@
 import { colors } from "@/constants"
-import { ComponentPropsWithoutRef } from "react"
 import { StyleSheet, Text, TouchableOpacity } from "react-native"
 
-interface StyledButtonProps
-  extends ComponentPropsWithoutRef<typeof TouchableOpacity> {
+interface StyledButtonProps {
   title: string
   variant?: "primary" | "outline"
   flex1?: boolean
+  disabled?: boolean
+  onPress: () => void
 }
 
 export function StyledButton({
+  disabled = false,
   flex1,
   title,
   variant = "primary",
-  ...props
+  onPress
 }: StyledButtonProps) {
   return (
     <TouchableOpacity
       style={[
-        buttonStyles.default,
         buttonStyles[variant],
-        { flex: flex1 ? 1 : 0 }
+        {
+          flex: flex1 ? 1 : 0,
+          opacity: disabled ? 0.7 : 1,
+          alignItems: "center",
+          borderRadius: 6,
+          borderWidth: 2,
+          height: 48,
+          justifyContent: "center",
+          paddingHorizontal: 8,
+          minWidth: 120
+        }
       ]}
-      {...props}
+      onPress={onPress}
       activeOpacity={0.7}
+      disabled={disabled}
     >
-      <Text style={[titleStyles.default, titleStyles[variant]]}>{title}</Text>
+      <Text style={[titleStyles[variant], { fontFamily: "Inter-Medium" }]}>
+        {title}
+      </Text>
     </TouchableOpacity>
   )
 }
 
 const buttonStyles = StyleSheet.create({
-  default: {
-    alignItems: "center",
-    borderRadius: 6,
-    borderWidth: 2,
-    height: 48,
-    justifyContent: "center",
-    paddingHorizontal: 8,
-    minWidth: 120
-  },
   primary: {
     backgroundColor: colors.neutral900,
     borderColor: colors.neutral900
@@ -51,9 +55,6 @@ const buttonStyles = StyleSheet.create({
 })
 
 const titleStyles = StyleSheet.create({
-  default: {
-    fontFamily: "Inter-Medium"
-  },
   primary: {
     color: colors.neutral50
   },

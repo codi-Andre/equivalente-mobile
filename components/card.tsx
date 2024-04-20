@@ -5,7 +5,7 @@ interface CardProps {
   title?: string
   children: React.ReactNode
   group: string
-  kcal: number
+  kcal: string
 }
 
 export function Card({ children, title, group, kcal }: CardProps) {
@@ -20,7 +20,7 @@ export function Card({ children, title, group, kcal }: CardProps) {
         </View>
         <View>
           <Text style={styles.footerTitle}>Energia:</Text>
-          <Text style={styles.footerText}>{kcal} kcal</Text>
+          <Text style={styles.footerText}>{kcal}</Text>
         </View>
       </View>
     </View>

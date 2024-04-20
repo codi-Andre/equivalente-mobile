@@ -10,7 +10,7 @@ interface ComboboxProps<T> {
   list: T[]
 }
 
-export function Combobox<T extends { label: string; value: string }>({
+export function Combobox<T extends { name: string; id: string }>({
   side = "auto",
   list = [],
   setValue,
@@ -24,18 +24,19 @@ export function Combobox<T extends { label: string; value: string }>({
       style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
       inputSearchStyle={styles.inputSearchStyle}
       iconStyle={styles.iconStyle}
+      itemContainerStyle={styles.item}
       data={list}
       search
       maxHeight={300}
-      labelField="label"
-      valueField="value"
+      labelField="name"
+      valueField="id"
       placeholder={!isFocus ? "Escolha um alimento..." : "..."}
       searchPlaceholder="Busque um alimento..."
       value={value}
       onFocus={() => setIsFocus(true)}
       onBlur={() => setIsFocus(false)}
       onChange={(item) => {
-        setValue(item.value)
+        setValue(item.id)
         setIsFocus(false)
       }}
     />
@@ -55,6 +56,10 @@ const styles = StyleSheet.create({
     height: 24
   },
   inputSearchStyle: {
-    height: 40
+    height: 48
+  },
+  item: {
+    borderBottomColor: colors.neutral200,
+    borderBottomWidth: 1
   }
 })
