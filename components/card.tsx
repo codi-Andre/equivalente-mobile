@@ -18,7 +18,7 @@ export function Card({ children, title, group, kcal }: CardProps) {
           <Text style={styles.footerTitle}>Grupo Alimentar:</Text>
           <Text style={styles.footerText}>{group}</Text>
         </View>
-        <View>
+        <View style={{ alignItems: "flex-end" }}>
           <Text style={styles.footerTitle}>Energia:</Text>
           <Text style={styles.footerText}>{kcal}</Text>
         </View>

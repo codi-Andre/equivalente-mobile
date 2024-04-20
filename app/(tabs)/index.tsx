@@ -1,5 +1,6 @@
 import { Card } from "@/components/card"
 import { Combobox } from "@/components/combobox"
+import { Display } from "@/components/display"
 import { Icon } from "@/components/icon"
 import { StyledButton } from "@/components/styled-button"
 import { StyledInput } from "@/components/styled-input"
@@ -63,11 +64,7 @@ export default function Home() {
             setValue={(id) => updateFood(id, 2)}
           />
 
-          <StyledInput
-            placeholder="Quantidade (g)"
-            defaultValue={quantity2}
-            readOnly
-          />
+          <Display title={quantity2} />
         </Card>
 
         <View style={styles.separator}>

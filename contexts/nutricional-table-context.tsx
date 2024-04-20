@@ -94,13 +94,20 @@ export function NutritionalTableProvider({
 
     const food2Quantity = (totalCalories / food2CaloriesPerGram).toFixed(1)
 
-    setQuantity2(`${food2Quantity} (g)`)
     setFoodData({
       calories1: totalCalories.toFixed(1) + " kcal",
       calories2: totalCalories.toFixed(1) + " kcal",
       group1: foodSet[0].category,
       group2: foodSet[1].category
     })
+
+    if (food2Quantity === "Infinity" || food2Quantity === "0.0") {
+      setQuantity2("Não é possível calcular alimentos com zero calorias")
+      setFoodData((prev) => ({ ...prev, calories2: "---" }))
+      return
+    }
+
+    setQuantity2(`${food2Quantity} (g)`)
   }
 
   function clearInputs() {
