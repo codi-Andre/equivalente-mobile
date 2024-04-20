@@ -19,8 +19,6 @@
     "babel-plugin-inline-import": "^3.0.0",
     "drizzle-orm": "^0.30.8",
     "expo": "~50.0.17",
-    "expo-asset": "~9.0.2",
-    "expo-file-system": "~16.0.9",
     "expo-font": "~11.10.3",
     "expo-linking": "~6.2.2",
     "expo-router": "~3.4.8",
