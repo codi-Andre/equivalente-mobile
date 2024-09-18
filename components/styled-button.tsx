@@ -1,12 +1,12 @@
-import { colors } from "@/constants"
-import { StyleSheet, Text, TouchableOpacity } from "react-native"
+import { colors } from "@/constants";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface StyledButtonProps {
-  title: string
-  variant?: "primary" | "outline"
-  flex1?: boolean
-  disabled?: boolean
-  onPress: () => void
+  title: string;
+  variant?: "primary" | "outline";
+  flex1?: boolean;
+  disabled?: boolean;
+  onPress: () => void;
 }
 
 export function StyledButton({
@@ -14,7 +14,7 @@ export function StyledButton({
   flex1,
   title,
   variant = "primary",
-  onPress
+  onPress,
 }: StyledButtonProps) {
   return (
     <TouchableOpacity
@@ -29,8 +29,8 @@ export function StyledButton({
           height: 48,
           justifyContent: "center",
           paddingHorizontal: 8,
-          minWidth: 120
-        }
+          minWidth: 120,
+        },
       ]}
       onPress={onPress}
       activeOpacity={0.7}
@@ -40,25 +40,27 @@ export function StyledButton({
         {title}
       </Text>
     </TouchableOpacity>
-  )
+  );
 }
 
 const buttonStyles = StyleSheet.create({
   primary: {
-    backgroundColor: colors.neutral900,
-    borderColor: colors.neutral900
+    backgroundColor: colors.accent,
+    borderColor: colors.accent,
+    color: colors.black,
   },
   outline: {
-    backgroundColor: colors.neutral50,
-    borderColor: colors.neutral200
-  }
-})
+    backgroundColor: colors.secondary,
+    borderColor: colors.secondary,
+  },
+});
 
 const titleStyles = StyleSheet.create({
   primary: {
-    color: colors.neutral50
+    fontWeight: "bold",
+    color: colors.black,
   },
   outline: {
-    color: colors.neutral700
-  }
-})
+    color: colors.primary,
+  },
+});

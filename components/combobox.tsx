@@ -1,22 +1,22 @@
-import { colors } from "@/constants"
-import React, { useState } from "react"
-import { StyleSheet } from "react-native"
-import { Dropdown } from "react-native-element-dropdown"
+import { colors } from "@/constants";
+import React, { useState } from "react";
+import { StyleSheet } from "react-native";
+import { Dropdown } from "react-native-element-dropdown";
 
 interface ComboboxProps<T> {
-  side?: "top" | "bottom" | "auto"
-  value: string
-  setValue: (val: string) => void
-  list: T[]
+  side?: "top" | "bottom" | "auto";
+  value: string;
+  setValue: (val: string) => void;
+  list: T[];
 }
 
 export function Combobox<T extends { name: string; id: string }>({
   side = "auto",
   list = [],
   setValue,
-  value
+  value,
 }: ComboboxProps<T>) {
-  const [isFocus, setIsFocus] = useState(false)
+  const [isFocus, setIsFocus] = useState(false);
 
   return (
     <Dropdown
@@ -36,30 +36,31 @@ export function Combobox<T extends { name: string; id: string }>({
       onFocus={() => setIsFocus(true)}
       onBlur={() => setIsFocus(false)}
       onChange={(item) => {
-        setValue(item.id)
-        setIsFocus(false)
+        setValue(item.id);
+        setIsFocus(false);
       }}
     />
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   dropdown: {
     height: 50,
-    borderColor: colors.neutral200,
+    borderColor: colors.secondary,
     borderWidth: 2,
     borderRadius: 4,
-    paddingHorizontal: 4
+    paddingHorizontal: 4,
   },
   iconStyle: {
     width: 24,
-    height: 24
+    height: 24,
+    color: colors.secondary,
   },
   inputSearchStyle: {
-    height: 48
+    height: 48,
   },
   item: {
     borderBottomColor: colors.neutral200,
-    borderBottomWidth: 1
-  }
-})
+    borderBottomWidth: 1,
+  },
+});
