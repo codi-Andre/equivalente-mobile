@@ -1,15 +1,15 @@
-import { Card } from "@/components/card"
-import { Combobox } from "@/components/combobox"
-import { Display } from "@/components/display"
-import { Icon } from "@/components/icon"
-import { StyledButton } from "@/components/styled-button"
-import { StyledInput } from "@/components/styled-input"
-import { colors } from "@/constants"
-import { useNutritionalTable } from "@/contexts/nutricional-table-context"
-import { getTable } from "@/db/queries"
-import { useEffect, useState } from "react"
-import { ScrollView, StyleSheet, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { Card } from "@/components/card";
+import { Combobox } from "@/components/combobox";
+import { Display } from "@/components/display";
+import { Icon } from "@/components/icon";
+import { StyledButton } from "@/components/styled-button";
+import { StyledInput } from "@/components/styled-input";
+import { colors } from "@/constants";
+import { useNutritionalTable } from "@/contexts/nutricional-table-context";
+import { getTable } from "@/db/queries";
+import { useEffect, useState } from "react";
+import { ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   const {
@@ -22,15 +22,15 @@ export default function Home() {
     updateFood,
     updateQuantity,
     clearInputs,
-    calculateEquivalent
-  } = useNutritionalTable()
-  const [table, setTable] = useState<{ id: string; name: string }[]>([])
+    calculateEquivalent,
+  } = useNutritionalTable();
+  const [table, setTable] = useState<{ id: string; name: string }[]>([]);
 
   useEffect(() => {
     if (isDbReady) {
-      setTable(getTable())
+      setTable(getTable());
     }
-  }, [isDbReady])
+  }, [isDbReady]);
 
   return (
     <SafeAreaView style={{ height: "100%" }}>
@@ -73,6 +73,7 @@ export default function Home() {
             variant="outline"
             flex1
             onPress={clearInputs}
+            disabled={!food1 && !food2 && !quantity1}
           />
 
           <StyledButton
@@ -84,25 +85,25 @@ export default function Home() {
         </View>
       </ScrollView>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     height: "100%",
     alignItems: "center",
-    backgroundColor: colors.neutral50,
+    backgroundColor: colors.white,
     justifyContent: "center",
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   separator: {
     flexDirection: "row",
     gap: 16,
     marginTop: 16,
-    width: "100%"
-  }
-})
+    width: "100%",
+  },
+});

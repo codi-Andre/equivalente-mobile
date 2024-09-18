@@ -1,8 +1,9 @@
-import React from "react"
-import { Tabs } from "expo-router"
-import { Icon } from "@/components/icon"
-import { StatusBar } from "expo-status-bar"
-import { NutritionalTableProvider } from "@/contexts/nutricional-table-context"
+import React from "react";
+import { Tabs } from "expo-router";
+import { Icon } from "@/components/icon";
+import { StatusBar } from "expo-status-bar";
+import { NutritionalTableProvider } from "@/contexts/nutricional-table-context";
+import { colors } from "@/constants";
 
 export default function TabLayout() {
   return (
@@ -10,30 +11,33 @@ export default function TabLayout() {
       <StatusBar style="dark" />
       <NutritionalTableProvider>
         <Tabs
+          sceneContainerStyle={{ backgroundColor: colors.white }}
           screenOptions={{
-            tabBarActiveTintColor: "#262626",
+            tabBarActiveTintColor: colors.primary,
+            tabBarInactiveTintColor: colors.secondary,
             headerShown: false,
             tabBarStyle: {
-              gap: 4
-            }
+              gap: 4,
+              borderBlockColor: colors.secondary,
+            },
           }}
         >
           <Tabs.Screen
             name="index"
             options={{
               title: "Equivalente",
-              tabBarIcon: ({ color }) => <Icon name="scale" color={color} />
+              tabBarIcon: ({ color }) => <Icon name="scale" color={color} />,
             }}
           />
           <Tabs.Screen
             name="search"
             options={{
-              title: "Buscar",
-              tabBarIcon: ({ color }) => <Icon name="search" color={color} />
+              title: "Quem somos",
+              tabBarIcon: ({ color }) => <Icon name="search" color={color} />,
             }}
           />
         </Tabs>
       </NutritionalTableProvider>
     </>
-  )
+  );
 }

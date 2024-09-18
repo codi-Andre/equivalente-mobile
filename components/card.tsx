@@ -1,11 +1,11 @@
-import { colors } from "@/constants"
-import { StyleSheet, Text, View } from "react-native"
+import { colors } from "@/constants";
+import { StyleSheet, Text, View } from "react-native";
 
 interface CardProps {
-  title?: string
-  children: React.ReactNode
-  group: string
-  kcal: string
+  title?: string;
+  children: React.ReactNode;
+  group: string;
+  kcal: string;
 }
 
 export function Card({ children, title, group, kcal }: CardProps) {
@@ -24,32 +24,34 @@ export function Card({ children, title, group, kcal }: CardProps) {
         </View>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: colors.neutral200,
+    borderColor: colors.secondary,
     borderRadius: 6,
     borderWidth: 2,
     gap: 16,
     padding: 16,
-    width: "100%"
+    width: "100%",
   },
   title: {
     fontFamily: "Inter-Bold",
-    fontSize: 16
+    fontSize: 16,
+    color: colors.black,
   },
   footer: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   footerTitle: {
-    color: colors.neutral500,
+    color: colors.primary,
     fontFamily: "Inter-Regular",
-    fontSize: 12
+    fontSize: 12,
   },
   footerText: {
-    fontFamily: "Inter-Bold"
-  }
-})
+    fontFamily: "Inter-Bold",
+    color: colors.primary,
+  },
+});
