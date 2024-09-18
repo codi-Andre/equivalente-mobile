@@ -21,7 +21,7 @@ export function Combobox<T extends { name: string; id: string }>({
   return (
     <Dropdown
       dropdownPosition={side}
-      style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
+      style={[styles.dropdown, isFocus && { borderColor: colors.primary }]}
       inputSearchStyle={styles.inputSearchStyle}
       iconStyle={styles.iconStyle}
       itemContainerStyle={styles.item}
@@ -46,7 +46,7 @@ export function Combobox<T extends { name: string; id: string }>({
 const styles = StyleSheet.create({
   dropdown: {
     height: 50,
-    borderColor: colors.secondary,
+    borderColor: colors.background200,
     borderWidth: 2,
     borderRadius: 4,
     paddingHorizontal: 4,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   iconStyle: {
     width: 24,
     height: 24,
-    color: colors.secondary,
+    color: colors.background200,
   },
   inputSearchStyle: {
     height: 48,

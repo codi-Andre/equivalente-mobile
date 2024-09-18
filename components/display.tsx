@@ -11,10 +11,18 @@ export function Display({ title }: DisplayProps) {
       <Text
         style={{
           fontFamily: title ? "Inter-Bold" : "Inter-Regular",
-          color: title ? colors.black : colors.neutral500,
+          color: title ? colors.neutral700 : colors.neutral500,
         }}
       >
-        {title ? title : "Quantidade (g)"}
+        {title ? `Quantidade:` : "Quantidade (g)"}
+      </Text>
+      <Text
+        style={{
+          fontFamily: "Inter-Bold",
+          color: colors.black,
+        }}
+      >
+        {title ? title : ""}
       </Text>
     </View>
   );
@@ -23,7 +31,10 @@ export function Display({ title }: DisplayProps) {
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    justifyContent: "center",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    gap: 4,
     paddingHorizontal: 4,
     width: "100%",
   },

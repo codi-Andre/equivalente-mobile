@@ -29,7 +29,7 @@ export function Card({ children, title, group, kcal }: CardProps) {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: colors.secondary,
+    borderColor: colors.background200,
     borderRadius: 6,
     borderWidth: 2,
     gap: 16,
@@ -39,19 +39,19 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Inter-Bold",
     fontSize: 16,
-    color: colors.black,
+    color: colors.neutral700,
   },
   footer: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   footerTitle: {
-    color: colors.primary,
+    color: colors.neutral700,
     fontFamily: "Inter-Regular",
     fontSize: 12,
   },
   footerText: {
     fontFamily: "Inter-Bold",
-    color: colors.primary,
+    color: colors.neutral700,
   },
 });

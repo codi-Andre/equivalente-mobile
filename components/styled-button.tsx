@@ -45,22 +45,22 @@ export function StyledButton({
 
 const buttonStyles = StyleSheet.create({
   primary: {
-    backgroundColor: colors.accent,
-    borderColor: colors.accent,
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
     color: colors.black,
   },
   outline: {
-    backgroundColor: colors.secondary,
-    borderColor: colors.secondary,
+    backgroundColor: colors.accent,
+    borderColor: colors.accent,
   },
 });
 
 const titleStyles = StyleSheet.create({
   primary: {
     fontWeight: "bold",
-    color: colors.black,
+    color: colors.white,
   },
   outline: {
-    color: colors.primary,
+    color: colors.white,
   },
 });
