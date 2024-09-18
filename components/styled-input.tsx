@@ -15,7 +15,7 @@ export function StyledInput({ ...props }: StyledInputProps) {
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    borderColor: colors.secondary,
+    borderColor: colors.background200,
     borderRadius: 4,
     borderWidth: 2,
     paddingHorizontal: 4,

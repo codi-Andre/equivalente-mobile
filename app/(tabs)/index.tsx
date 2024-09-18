@@ -50,7 +50,7 @@ export default function Home() {
           />
         </Card>
 
-        <Icon name="chevronDown" size={32} color={colors.neutral300} />
+        <Icon name="chevronDown" size={32} color={colors.background300} />
 
         <Card
           title="Substituto"

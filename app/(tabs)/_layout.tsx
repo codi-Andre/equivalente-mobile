@@ -14,11 +14,11 @@ export default function TabLayout() {
           sceneContainerStyle={{ backgroundColor: colors.white }}
           screenOptions={{
             tabBarActiveTintColor: colors.primary,
-            tabBarInactiveTintColor: colors.secondary,
+            tabBarInactiveTintColor: colors.background300,
             headerShown: false,
             tabBarStyle: {
               gap: 4,
-              borderBlockColor: colors.secondary,
+              borderBlockColor: colors.background300,
             },
           }}
         >
