@@ -1,8 +1,6 @@
 {
-  "version": "5",
+  "version": "6",
   "dialect": "sqlite",
-  "id": "42458425-63f6-406e-919b-f8bbef9fcdc0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "categories": {
       "name": "categories",
@@ -73,15 +71,15 @@
         "food_category_id_categories_id_fk": {
           "name": "food_category_id_categories_id_fk",
           "tableFrom": "food",
-          "tableTo": "categories",
           "columnsFrom": [
             "category_id"
           ],
+          "tableTo": "categories",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "cascade",
+          "onDelete": "restrict"
         }
       },
       "compositePrimaryKeys": {},
@@ -99,7 +97,7 @@
         },
         "kcal": {
           "name": "kcal",
-          "type": "integer",
+          "type": "real",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
@@ -135,15 +133,15 @@
         "nutrients_food_id_food_id_fk": {
           "name": "nutrients_food_id_food_id_fk",
           "tableFrom": "nutrients",
-          "tableTo": "food",
           "columnsFrom": [
             "food_id"
           ],
+          "tableTo": "food",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "cascade",
+          "onDelete": "restrict"
         }
       },
       "compositePrimaryKeys": {},
@@ -152,8 +150,9 @@
   },
   "enums": {},
   "_meta": {
-    "schemas": {},
     "tables": {},
     "columns": {}
-  }
+  },
+  "id": "527d9ddc-7faf-4351-91a0-bfe02b768564",
+  "prevId": "00000000-0000-0000-0000-000000000000"
 }
