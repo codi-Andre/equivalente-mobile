@@ -7,16 +7,16 @@ CREATE TABLE `food` (
 	`id` text PRIMARY KEY NOT NULL,
 	`category_id` text NOT NULL,
 	`name` text NOT NULL,
-	FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON UPDATE no action ON DELETE no action
+	FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON UPDATE cascade ON DELETE restrict
 );
 --> statement-breakpoint
 CREATE TABLE `nutrients` (
 	`food_id` text NOT NULL,
-	`kcal` integer DEFAULT 0 NOT NULL,
+	`kcal` real DEFAULT 0 NOT NULL,
 	`protein` real DEFAULT 0 NOT NULL,
 	`carbohydrates` real DEFAULT 0 NOT NULL,
 	`lipids` real DEFAULT 0 NOT NULL,
-	FOREIGN KEY (`food_id`) REFERENCES `food`(`id`) ON UPDATE no action ON DELETE no action
+	FOREIGN KEY (`food_id`) REFERENCES `food`(`id`) ON UPDATE cascade ON DELETE restrict
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `categories_name_unique` ON `categories` (`name`);--> statement-breakpoint
