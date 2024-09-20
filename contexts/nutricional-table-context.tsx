@@ -67,15 +67,17 @@ export function NutritionalTableProvider({
         calories2: "",
         group1: ""
       }))
+      setQuantity2("")
       return
     }
-
+    
     setFoodData((prev) => ({
       ...prev,
       calories1: "",
       calories2: "",
       group2: ""
     }))
+    setQuantity2("")
     setFood2(name)
   }
 
